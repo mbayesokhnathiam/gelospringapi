@@ -22,4 +22,12 @@ public class EtudiantController {
 
         return saved ? ResponseEntity.status(201).body(etudiant) : ResponseEntity.status(500).body(etudiant);
     }
+
+    @GetMapping(value = "/save")
+    public ResponseEntity<?> listEtudiant(@RequestBody Etudiant etudiant){
+
+
+
+        return ResponseEntity.status(200).body(iEtudiantService.getListEtudiant());
+    }
 }
